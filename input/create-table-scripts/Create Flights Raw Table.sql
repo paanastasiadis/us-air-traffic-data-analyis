@@ -1,0 +1,1 @@
+CREATE TABLE Flight_Raw SELECT d.data_dte, d.`Year`, d.`Month`, d.usg_apt,  d.usg_wac ,d.fg_apt, d.fg_wac, d.carrier, d.carriergroup, d.Scheduled as scheduled_flights, p.Scheduled as scheduled_passengers FROM file_departures_csv d JOIN file_passengers_csv p ON (d.usg_apt = p.usg_apt AND d.fg_apt = p.fg_apt AND d.data_dte = p.data_dte  AND d.carrier = p.carrier) 
